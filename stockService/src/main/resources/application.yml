@@ -1,0 +1,12 @@
+spring: 
+   application: 
+      name: stock-service
+server: 
+   port: 3001
+eureka: 
+   client: 
+      serviceUrl:
+         defaultZone: http://localhost:1001/eureka/
+   instance:
+    instanceId: ${spring.cloud.client.ip-address}:${server.port}:stock-service
+    preferIpAddress: true     #访问路径可以显示IP地址
